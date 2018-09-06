@@ -1,0 +1,11 @@
+
+	  {% if request.user.is_authenticated %}
+        <div align="center">
+        	<form  method="post">
+         	{% csrf_token %}
+        	<input type="hidden" id="fase" name="fase" value="0" />
+         	<input type="submit" class="btn btn-primary btn-xl" value="Confirmar partida" />
+     		</form>
+        </div>
+        {% endif %}
+
