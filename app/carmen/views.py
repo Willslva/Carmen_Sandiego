@@ -45,3 +45,10 @@ class Game(ListView):
     def get_context_data(self, **kwargs):
         kwargs['partida'] = models.Partida.objects.all()
         return super(Game, self).get_context_data(**kwargs)
+
+
+class Jogo(TemplateView):
+    template_name = 'core/home.html'
+
+class Fase1(TemplateView):
+    template_name = 'core/pequim.html'

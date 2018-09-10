@@ -22,4 +22,8 @@ urlpatterns = [
     #Criar partida
      path('criarpartida/', core.PartidaCreate.as_view(), name='criarpartida'),
 
+     path('teste/', core.Jogo.as_view(), name='teste'),
+
+     path('fase1/', core.Fase1.as_view(), name='fase1'),
+
 ]
