@@ -52,3 +52,9 @@ class Jogo(TemplateView):
 
 class Fase1(TemplateView):
     template_name = 'core/pequim.html'
+    
+class Testemunhas1(TemplateView):
+    template_name = 'core/testemunhaspequim.html'
+
+class Mapa (TemplateView):
+    template_name = 'core/mapapequim.html'

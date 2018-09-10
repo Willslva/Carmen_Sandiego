@@ -26,4 +26,8 @@ urlpatterns = [
 
      path('fase1/', core.Fase1.as_view(), name='fase1'),
 
+     path('testemunhas/', core.Testemunhas1.as_view(), name='testemunhas1'),
+
+     path('mapa/', core.Mapa.as_view(), name='mapa'),
+
 ]
