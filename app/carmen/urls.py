@@ -15,7 +15,7 @@ urlpatterns = [
 
     # Logout
      path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    
+
     #Cadastro de usuario
      path('usuarios/novo/', core.UserCreateView.as_view(), name='user-create'),
 
@@ -26,8 +26,25 @@ urlpatterns = [
 
      path('pequim/', core.Fase1.as_view(), name='fase1'),
 
-     path('testemunhas/', core.Testemunhas1.as_view(), name='testemunhas1'),
+     path('testemunhaspequim/', core.Testemunhas1.as_view(), name='testemunhas1'),
+
+     path('paris/', core.Fase2.as_view(), name='fase2'),
+
+     path('testemunhasparis/', core.Testemunhas2.as_view(), name='testemunhas2'),
+
+     path('bogota/', core.Fase3.as_view(), name='fase3'),
+
+     path('testemunhasbogota/', core.Testemunhas3.as_view(), name='testemunhas3'),
+
+     path('buenos/', core.Fase4.as_view(), name='fase4'),
+
+     path('testemunhasbuenosaires/', core.Testemunhas4.as_view(), name='testemunhas4'),
 
      path('mapa/', core.Mapa.as_view(), name='mapa'),
+
+     path('mapa-mundi/', core.MapaMundi.as_view(), name='mapamundi'),
+
+
+     
 
 ]

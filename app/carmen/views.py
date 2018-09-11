@@ -22,17 +22,17 @@ class UserCreateView(CreateView):
         obj.set_password(obj.password)
         obj.save()
         return super(UserCreateView, self).form_valid(form)
-        
+
 class PartidaCreate(CreateView):
     model = models.Partida
     template_name = 'core/criarpartida.html'
     success_url = reverse_lazy('forca:game')
     fields = ['fase']
 
-    def form_valid(self, form): 
+    def form_valid(self, form):
         if (models.Partida.objects.filter(usuario=self.request.user)):
             return HttpResponseRedirect('/jogo/')
-        else:            
+        else:
             obj = form.save(commit=False)
             obj.usuario = self.request.user
             obj.save()
@@ -41,7 +41,7 @@ class PartidaCreate(CreateView):
 class Game(ListView):
     model = models.Partida
     template_name = 'core/jogo.html'
-    
+
     def get_context_data(self, **kwargs):
         kwargs['partida'] = models.Partida.objects.all()
         return super(Game, self).get_context_data(**kwargs)
@@ -52,9 +52,31 @@ class Jogo(TemplateView):
 
 class Fase1(TemplateView):
     template_name = 'core/pequim.html'
-    
+
 class Testemunhas1(TemplateView):
     template_name = 'core/testemunhaspequim.html'
 
+class Fase2(TemplateView):
+    template_name = 'core/paris.html'
+
+class Testemunhas2(TemplateView):
+    template_name = 'core/testemunhasparis.html'
+
+class Fase3(TemplateView):
+    template_name = 'core/bogota.html'
+
+class Testemunhas3(TemplateView):
+    template_name = 'core/testemunhasbogota.html'
+
+class Fase4(TemplateView):
+    template_name = 'core/buenosaires.html'
+
+class Testemunhas4(TemplateView):
+    template_name = 'core/testemunhasbuenosaires.html'
+
 class Mapa (TemplateView):
     template_name = 'core/mapapequim.html'
+
+class MapaMundi (TemplateView):
+    template_name = 'core/mapa.html'
+
