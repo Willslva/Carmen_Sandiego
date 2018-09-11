@@ -24,7 +24,7 @@ urlpatterns = [
 
      path('teste/', core.Jogo.as_view(), name='teste'),
 
-     path('fase1/', core.Fase1.as_view(), name='fase1'),
+     path('pequim/', core.Fase1.as_view(), name='fase1'),
 
      path('testemunhas/', core.Testemunhas1.as_view(), name='testemunhas1'),
 
