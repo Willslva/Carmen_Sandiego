@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Ubuntu with communitheme snap on Wayland
+Comment=This session logs you into Ubuntu
+Exec=env GNOME_SHELL_SESSION_MODE=ubuntu-communitheme /snap/communitheme/current/session
+TryExec=/snap/communitheme/current/session
+Type=Application
+DesktopNames=communitheme:ubuntu:GNOME
+X-Ubuntu-Gettext-Domain=gnome-session-3.0

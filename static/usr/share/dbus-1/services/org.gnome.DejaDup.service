@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.gnome.DejaDup
+Exec=/usr/bin/deja-dup --gapplication-service

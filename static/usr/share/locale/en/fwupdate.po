@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the fwupdate package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: fwupdate 10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-14 15:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: fwupdate.c:39
+msgid "Could not create iterator"
+msgstr ""
+
+#: fwupdate.c:55
+msgid "efi_guid_to_id_guid failed"
+msgstr ""
+
+#: fwupdate.c:64
+msgid "Unknown"
+msgstr ""
+
+#: fwupdate.c:67
+msgid "System Firmware"
+msgstr ""
+
+#: fwupdate.c:70
+msgid "Device Firmware"
+msgstr ""
+
+#: fwupdate.c:73
+msgid "UEFI Driver"
+msgstr ""
+
+#: fwupdate.c:80
+#, c-format
+msgid "%s type, %s version %d can be updated to any version above %d\n"
+msgstr ""
+
+#: fwupdate.c:110 fwupdate.c:111 fwupdate.c:115 fwupdate.c:186
+msgid "fwupdate"
+msgstr ""
+
+#: fwupdate.c:116
+msgid "apply"
+msgstr ""
+
+#: fwupdate.c:121
+msgid "Apply firmware updates"
+msgstr ""
+
+#: fwupdate.c:122
+msgid "<guid> <firmware.cap>"
+msgstr ""
+
+#: fwupdate.c:123
+msgid "list"
+msgstr ""
+
+#: fwupdate.c:128
+msgid "List supported firmware updates"
+msgstr ""
+
+#: fwupdate.c:129
+msgid "supported"
+msgstr ""
+
+#: fwupdate.c:134
+msgid "Query for firmware update support"
+msgstr ""
+
+#: fwupdate.c:135
+msgid "info"
+msgstr ""
+
+#: fwupdate.c:141
+msgid "Show the information of firmware update status"
+msgstr ""
+
+#: fwupdate.c:142
+msgid "enable"
+msgstr ""
+
+#: fwupdate.c:147
+msgid ""
+"Enable firmware update support on supported systems (will require a reboot)"
+msgstr ""
+
+#: fwupdate.c:148
+msgid "quiet"
+msgstr ""
+
+#: fwupdate.c:153
+msgid "Work quietly"
+msgstr ""
+
+#: fwupdate.c:154
+msgid "force"
+msgstr ""
+
+#: fwupdate.c:159
+msgid "Forces flash even if GUID isn't in ESRT."
+msgstr ""
+
+#: fwupdate.c:160
+msgid "esp-path"
+msgstr ""
+
+#: fwupdate.c:165
+msgid "Override the default ESP path"
+msgstr ""
+
+#: fwupdate.c:166
+msgid "<esp-path>"
+msgstr ""
+
+#: fwupdate.c:167
+msgid "dont-use-existing-media-path"
+msgstr ""
+
+#: fwupdate.c:172
+msgid "Don't reuse the filename for this GUID from previous updates"
+msgstr ""
+
+#: fwupdate.c:173
+msgid "verbose"
+msgstr ""
+
+#: fwupdate.c:178
+msgid "Be more verbose on errors"
+msgstr ""
+
+#: fwupdate.c:191
+#, c-format
+msgid "poptReadDefaultConfig failed: %s: %s"
+msgstr ""
+
+#: fwupdate.c:202 fwupdate.c:212
+#, c-format
+msgid "missing argument: %s"
+msgstr ""
+
+#: fwupdate.c:202
+msgid "guid"
+msgstr ""
+
+#: fwupdate.c:208
+#, c-format
+msgid "Invalid guid: \"%s\""
+msgstr ""
+
+#: fwupdate.c:213
+msgid "filename.cap"
+msgstr ""
+
+#: fwupdate.c:220
+#, c-format
+msgid "invalid argument: \"%s\": %s"
+msgstr ""
+
+#: fwupdate.c:224
+#, c-format
+msgid "invalid argument: \"%s\""
+msgstr ""
+
+#: fwupdate.c:228
+msgid "no action specified"
+msgstr ""
+
+#: fwupdate.c:237 fwupdate.c:241 fwupdate.c:311 fwupdate.c:317 fwupdate.c:321
+#: fwupdate.c:325
+#, c-format
+msgid "%s\n"
+msgstr ""
+
+#: fwupdate.c:238
+msgid "Firmware updates are not supported on this machine."
+msgstr ""
+
+#: fwupdate.c:242 fwupdate.c:246 fwupdate.c:251
+msgid "Firmware updates are supported on this machine."
+msgstr ""
+
+#: fwupdate.c:245 fwupdate.c:250
+#, c-format
+msgid ""
+"%s\n"
+"%s\n"
+msgstr ""
+
+#: fwupdate.c:247
+msgid "Support is currently disabled."
+msgstr ""
+
+#: fwupdate.c:252
+msgid "Support will be enabled on the next reboot."
+msgstr ""
+
+#: fwupdate.c:259
+msgid "Could not list system firmware resources"
+msgstr ""
+
+#: fwupdate.c:270
+msgid "Could not iterate resources"
+msgstr ""
+
+#: fwupdate.c:285
+msgid "Error configuring GUID"
+msgstr ""
+
+#: fwupdate.c:292
+#, c-format
+msgid "could not open \"%s\""
+msgstr ""
+
+#: fwupdate.c:297
+msgid "Could not set up firmware update"
+msgstr ""
+
+#: fwupdate.c:302
+msgid "firmware resource not found"
+msgstr ""
+
+#: fwupdate.c:307
+msgid "Could not display firmware update status"
+msgstr ""
+
+#: fwupdate.c:312
+msgid "To enable firmware updates, this tool must be launched as root."
+msgstr ""
+
+#: fwupdate.c:318
+msgid "Firmware updates can not be enabled on this machine from this tool."
+msgstr ""
+
+#: fwupdate.c:322
+msgid "Firmware updates are already enabled."
+msgstr ""
+
+#: fwupdate.c:326
+msgid "Firmware updates will be enabled after the system is rebooted."
+msgstr ""
