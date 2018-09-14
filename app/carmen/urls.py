@@ -57,7 +57,11 @@ urlpatterns = [
 
      path('mapa-mundi/', core.MapaMundi.as_view(), name='mapamundi'),
 
+     path('', core.Home.as_view(), name='home'),
 
-     
+     path('sobre/', core.Sobre.as_view(), name='sobre'),
+
+
+
 
 ]

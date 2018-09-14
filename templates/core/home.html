@@ -1,0 +1,44 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Allerta+Stencil|Bangers|Barrio|Black+Ops+One|Bungee+Shade|Diplomata|Faster+One|Holtwood+One+SC|Monofett|New+Rocker|Pacifico|Press+Start+2P|Righteous|Sigmar+One" rel="stylesheet">
+    <style media="screen">
+      ul li{
+	       -webkit-animation: flash linear 1s infinite;
+	        animation: flash linear 1s infinite;
+        }
+        @-webkit-keyframes flash {
+	         0% { opacity: 1; } 50% { opacity: .1; } 100% { opacity: 1; }
+         }
+        @keyframes flash {
+          0% { opacity: 1; } 50% { opacity: .1; } 100% { opacity: 1; }
+        }
+
+        a:hover {
+          cursor: nesw-resize;
+        }
+
+    </style>
+  </head>
+  <body style="background-color: #000;" >
+    <div style="border: 2px double #FFF; margin: auto;margin-top: 10%; padding: 20px; height: 100%; width: 60%;">
+      <div style="margin-left: 40%;margin-top: 1%;position:absolute; z-index:2;">
+        <ul>
+          <a href="{% url 'carmen:login' %}"><button style=" font-family: 'Press Start 2P';  color: #FFF; background: transparent; border-color: transparent;font-size: 150%;"><li>Jogar</li></button></a><br/><br/>
+          <a href="{% url 'carmen:user-create' %}"><button style=" font-family: 'Press Start 2P';  color: #FFF; background: transparent; border-color: transparent; font-size: 150%;"><li>Cadastrar</li></button></a><br/><br/>
+          <a href="{% url 'carmen:sobre' %}"><button style=" font-family: 'Press Start 2P';  color: #FFF; background: transparent; border-color: transparent;font-size: 150%;"><li>Sobre</li></button></a>
+
+        </ul>
+
+      </div>
+      <img style=" z-index:1" src="{% static 'icon/home.jpg' %}" width="100%">
+
+    </div>
+
+  </body>
+</html>

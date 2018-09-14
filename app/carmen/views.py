@@ -50,6 +50,9 @@ class Game(ListView):
 class Jogo(TemplateView):
     template_name = 'core/home.html'
 
+class Sobre(TemplateView):
+    template_name = 'core/sobre.html'
+
 class Fase1(TemplateView):
     template_name = 'core/pequim.html'
 
@@ -98,3 +101,5 @@ class Mapa (TemplateView):
 class MapaMundi (TemplateView):
     template_name = 'core/mapa.html'
 
+class Home (TemplateView):
+    template_name = "core/home.html"
