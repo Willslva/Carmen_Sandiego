@@ -1,0 +1,61 @@
+{%  load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Carmen Sandiego </title>
+	<link href="https://fonts.googleapis.com/css?family=Aldrich|Allerta+Stencil|Bangers|Barrio|Black+Ops+One|Bungee+Shade|Diplomata|Faster+One|Holtwood+One+SC|Monofett|New+Rocker|Pacifico|Press+Start+2P|Righteous|Sigmar+One" rel="stylesheet">
+	<style>
+
+		P {
+			color: #FFF;
+			font-family: 'Press Start 2P';
+
+		}
+
+		
+
+
+		span {
+
+			font-family: 'Press Start 2P'
+		}
+
+
+
+	</style>
+
+
+</head>
+<body style="background-color: #000;">
+
+
+
+
+	<div style="display: inline-block;" >
+		<div style="border: 2px double #FFF; float: left; padding: 20px; height: 100%; width: 40%;" >
+			<div style="border: 2px double #FFF; margin-bottom: 10px">
+				<h3 style="padding: 10px; color: #FFF; font-family: 'Press Start 2P'; text-align: center;"> San Diego - EUA </h3>
+			</div>
+			<img style="border: 2px double #FFF; transition-duration: 100;" src="{% static 'country/sandiego.jpg' %}" width="100%" height="610px">
+		</div>
+		<div style="border: 2px double #FFF; float: left; padding: 20px; width: 52%; height: 590px;" >
+			<!-- <img  style="margin: 0; float: left;" src="https://st3.depositphotos.com/3557671/12830/v/950/depositphotos_128301024-stock-illustration-museum-security-guard-icon-in.jpg" width="60px" > -->
+			<div style="margin:0; margin-left: 100px;">
+				<p>  cidade dos Estados Unidos localizada no sul do estado da Califórnia, sendo a segunda cidade mais populosa do estado e a oitava mais populosa do país.</p>
+				<p>  É tida como o berço da Califórnia e é conhecida por seu clima ameno durante a maior parte do ano, por seu porto natural de águas profundas, extensas praias, longa associação com a Marinha dos Estados Unidos e seu centro de desenvolvimento da biotecnologia. </p>
+				
+				<br>
+				<br>
+			</div>
+		</div>
+		<div style="border: 2px double #FFF; float: left; padding-left: 10px; width: 54.2%; height: 120px; display: inline;">
+			<a href="{% url 'carmen:testemunhas7' %}"><button style="width: 24%; height: 120px; margin: 0 0;margin-left: 10px; " > <span> Testemunhas </span><br/> <img src="{% static 'icon/persons.png' %}" width="25%"></button></a>
+			<a href=" {% url 'carmen:mapamundi' %} "><button style="width: 24%; height: 120px; margin: 0 0;margin-left: 80px;"><span> Países </span> <br/><img  src="{% static 'icon/map.png' %}" width="25%" > </button></a>
+			<button  style="width: 24%; height: 120px; margin: 0 0;margin-left: 70px;" > <span> Sair </span> <br/ > <img src="{% static 'icon/exit.png' %}" width="25%" > </button>
+
+		</div>
+	</div>
+
+</body>
+</html>

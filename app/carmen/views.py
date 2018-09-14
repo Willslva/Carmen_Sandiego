@@ -74,6 +74,24 @@ class Fase4(TemplateView):
 class Testemunhas4(TemplateView):
     template_name = 'core/testemunhasbuenosaires.html'
 
+class Fase5(TemplateView):
+    template_name = 'core/atenas.html'
+
+class Testemunhas5(TemplateView):
+    template_name = 'core/testemunhasatenas.html'
+
+class Fase6(TemplateView):
+    template_name = 'core/sydney.html'
+
+class Testemunhas6(TemplateView):
+    template_name = 'core/testemunhassydney.html'
+
+class Fase7(TemplateView):
+    template_name = 'core/sandiego.html'
+
+class Testemunhas7(TemplateView):
+    template_name = 'core/testemunhassandiego.html'
+
 class Mapa (TemplateView):
     template_name = 'core/mapapequim.html'
 
