@@ -7,8 +7,6 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from . import models
-from django.db.models import Max
-import random
 from .forms import UUIDUserForm
 from django.http import HttpResponseRedirect
 
@@ -26,12 +24,11 @@ class UserCreateView(CreateView):
 class PartidaCreate(CreateView):
     model = models.Partida
     template_name = 'core/criarpartida.html'
-    success_url = reverse_lazy('forca:game')
-    fields = ['fase']
+    fields = ['fase', 'verificador']
 
     def form_valid(self, form):
         if (models.Partida.objects.filter(usuario=self.request.user)):
-            return HttpResponseRedirect('/jogo/')
+            return HttpResponseRedirect('/game/')  
         else:
             obj = form.save(commit=False)
             obj.usuario = self.request.user
@@ -46,12 +43,44 @@ class Game(ListView):
         kwargs['partida'] = models.Partida.objects.all()
         return super(Game, self).get_context_data(**kwargs)
 
+    def get_queryset(self):
+        if ('a' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=1) 
+        elif ('b' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=2)
+        elif ('c' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=3)
+        elif ('d' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=4)
+        elif ('e' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=5)
+        elif ('f' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=6)
+
+    def post(self, request, *args, **kwargs):
+        if ('a' in self.request.POST):
+            return self.get(request, *args, **kwargs)
+        elif ('b' in self.request.POST):
+            return self.get(request, *args, **kwargs)
+        elif ('c' in self.request.POST):
+            return self.get(request, *args, **kwargs)
+        elif ('d' in self.request.POST):
+            return self.get(request, *args, **kwargs)
+        elif ('e' in self.request.POST):
+            return self.get(request, *args, **kwargs)
+        elif ('f' in self.request.POST):
+            return self.get(request, *args, **kwargs)
+
 
 class Jogo(TemplateView):
     template_name = 'core/home.html'
 
 class Sobre(TemplateView):
     template_name = 'core/sobre.html'
+
+class Intro(ListView):
+    model = models.Partida
+    template_name = 'core/introducao.html'
 
 class Fase1(TemplateView):
     template_name = 'core/pequim.html'

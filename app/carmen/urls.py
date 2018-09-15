@@ -25,6 +25,10 @@ urlpatterns = [
      path('teste/', core.Jogo.as_view(), name='teste'),
 
     #Fases do game
+     path('intro/', core.Intro.as_view(), name='intro'),
+
+     path('game/', core.Game.as_view(), name='game'),
+
      path('pequim/', core.Fase1.as_view(), name='fase1'),
 
      path('testemunhaspequim/', core.Testemunhas1.as_view(), name='testemunhas1'),

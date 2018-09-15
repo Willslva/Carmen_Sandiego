@@ -1,0 +1,21 @@
+{% for object in partida %}
+      {% if request.user.is_authenticated %}
+        {%if request.user.username == object.usuario.username%}
+          {% if object.fase == 0 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/intro/">
+          {% elif object.fase == 1 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/pequim/">
+          {% elif object.fase == 2 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/paris/">
+          {% elif object.fase == 3 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/bogota/">
+          {% elif object.fase == 4 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/buenos/">
+          {% elif object.fase == 5 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/atenas/">
+          {% elif object.fase == 6 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/sydney/">
+          {% endif %}
+        {% endif %}
+      {% endif %}
+{% endfor %}

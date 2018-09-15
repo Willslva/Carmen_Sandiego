@@ -45,13 +45,19 @@
 		<img  style="margin: 0; float: left;" src="https://thumbs.dreamstime.com/z/pol%C3%ADcia-irritado-m%C3%A9dio-dos-desenhos-animados-94382106.jpg" width="60px" >
 		<div style="margin:0; margin-left: 100px;">
 			<p> Aaaah! Então você é o novato?! </p>
-			<p> Eu ouvir muitas historias sobre você senhor username. </p>
+			<p> Eu ouvir muitas historias sobre você, {{ request.user.username }}. </p>
 			<p> Vamos testar suas habilidades em campo, tenho um caso para você, mas vou logo avisando não vai ser fácil. </p>
 			<p> Sua missão é capturar Carmen Sandiego</p>
 			<p> Ela é uma antiga espiã do Serviço de inteligência de Mônaco</p>
-			<p> Boa sorte, username </p>
+			<p> Boa sorte, {{ request.user.username }}</p>
 		</div>
 	</div>
-	<button type="submit"> Inicializar missão</button>
+	<form action="{% url 'carmen:game' %}" method="post" >
+      {% csrf_token %}
+        <div class="form-group">
+          <input type="hidden"  name="a" value="a" />
+          <button type="submit"  class="btn btn-primary btn-xl"  >Inicializar missão</button>
+        </div>
+	</form>
 </body>
 </html>

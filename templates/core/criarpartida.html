@@ -1,11 +1,52 @@
+{% load static %}
 
-	  {% if request.user.is_authenticated %}
-        <div align="center">
-        	<form  method="post">
-         	{% csrf_token %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Allerta+Stencil|Bangers|Barrio|Black+Ops+One|Bungee+Shade|Diplomata|Faster+One|Holtwood+One+SC|Monofett|New+Rocker|Pacifico|Press+Start+2P|Righteous|Sigmar+One" rel="stylesheet">
+    <style media="screen">
+      ul li{
+	       -webkit-animation: flash linear 1s infinite;
+	        animation: flash linear 1s infinite;
+        }
+        @-webkit-keyframes flash {
+	         0% { opacity: 1; } 50% { opacity: .1; } 100% { opacity: 1; }
+         }
+        @keyframes flash {
+          0% { opacity: 1; } 50% { opacity: .1; } 100% { opacity: 1; }
+        }
+
+        a:hover {
+          cursor: nesw-resize;
+        }
+
+    </style>
+  </head>
+  <body style="background-color: #000;" >
+    <div style="border: 2px double #FFF; margin: auto;margin-top: 10%; padding: 20px; height: 100%; width: 60%;">
+      <div style="margin-left: 40%;margin-top: 1%;position:absolute; z-index:2;">
+        <ul>
+        	{% if request.user.is_authenticated %}
+     		<form  method="post">
+        	{% csrf_token %}
         	<input type="hidden" id="fase" name="fase" value="0" />
-         	<input type="submit" class="btn btn-primary btn-xl" value="Confirmar partida" />
-     		</form>
-        </div>
-        {% endif %}
+      		<input type="hidden" id="verificador" name="verificador" value="0" />
+        	<button type="submit"  style=" font-family: 'Press Start 2P';  color: #FFF; background: transparent; border-color: transparent;font-size: 150%;" ><li>Iniciar</li></button></a><br/><br/>
+     	</form>
+ 		{% endif %}
+         
+        </ul>
+
+      </div>
+      <img style=" z-index:1" src="{% static 'icon/home.jpg' %}" width="100%">
+
+    </div>
+
+  </body>
+</html>
+
+
 
