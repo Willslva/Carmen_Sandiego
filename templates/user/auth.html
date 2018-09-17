@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
     p {
       color: #FFF;
       font-family: 'Press Start 2P';
-      text-align: center 
+      text-align: center
 
 
     }
@@ -22,7 +23,43 @@
 
     span {
 
-      font-family: 'Press Start 2P'
+      font-family: 'Press Start 2P';
+    }
+
+    .field {
+      border-radius: 0;
+      text-align: center;
+      background-color: #c9d0db;
+      margin: 0 15%;
+
+    }
+
+    .button {
+      font-family: 'Press Start 2P';
+      background-color: #000;
+      color: #FFF;
+      border-color: transparent;
+      font-size: 20px;
+      float: right;
+      cursor: pointer;
+
+    }
+    .button2 {
+      font-family: 'Press Start 2P';
+      background-color: #000;
+      color: #FFF;
+      border-color: transparent;
+      font-size: 20px;
+      float: left;
+      cursor: pointer;
+
+    }
+
+    .label {
+      font-family: 'Press Start 2P';
+      color: #FFF;
+      margin-top: 45px;
+      text-align: center;
     }
 
 
@@ -32,39 +69,27 @@
 
 </head>
 <body style="background-color: #000;">
-<div style="display: inline-block;" >
-
-<div class="login-box">
- 
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Informe seu usuário e senha</p>
-
-    <form action="{% url 'carmen:login' %}" method="post">
-      {% csrf_token %}
-      <div class="form-group has-feedback">
-        <label style="padding: 10px; color: #FFF; font-family: 'Press Start 2P'; text-align: center;">nick name</label>
-        <input name="username" type="text" class="form-control">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <label style="padding: 10px; color: #FFF; font-family: 'Press Start 2P'; text-align: center;">Password</label>
-        <input name="password" type="password" class="form-control">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-        <!-- /.col -->
-        <div class="col-xs-4 pull-right">
-          <button type="submit" class="btn btn-danger btn-block btn-flat" id="sendMessageButton">Entrar</button>
+  <div style="border: 1px double #FFF; margin: auto; margin-top: 10%; width: 50%;">
+    <h3 style="text-align: center; font-family: 'Press Start 2P'; color: #FFF; ">Olá recruta! identifique-se</h3>
+    <div>
+      <form method="post">
+        {% csrf_token %}
+        <div style="display:block; margin: 40px 25%;">
+        <p class="label">Nickname</p>
+          <input type="text" name="username" class='field' />
+        <p class="label">Password</p>
+          <input type="password" name="password" class='field' />
         </div>
-        <!-- /.col -->
-      </div>
-    </form>
+        <div style="display: inline-block; width:50%; margin: 40px 25%;">
+
+          <input type="submit" class="button" value="Login">
+          <a href="/"><button  class="button2" >Voltar</button></a>
+
+        </form>
+        </div>
+
+    </div>
 
   </div>
-  <!-- /.login-box-body -->
-</div>
-</div>
 </body>
 </html>
-

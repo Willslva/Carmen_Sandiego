@@ -10,7 +10,7 @@
     p {
       color: #FFF;
       font-family: 'Press Start 2P';
-      text-align: center;
+      text-align: justify;
 
 
     }
@@ -32,28 +32,39 @@
 
 </head>
 <body style="background-color: #000;">
-<div style="display: inline-block;" >
+  <div style="display: inline-block;" >
+    <div style="border: 2px double #FFF; float: left; padding: 20px; height: 100%; width: 40%;" >
+      <div style="border: 2px double #FFF; margin-bottom: 10px">
+        <h3 style="padding: 10px; color: #FFF; font-family: 'Press Start 2P'; text-align: center;"> Delegacia </h3>
+      </div>
+      <img style="border: 2px double #FFF; transition-duration: 100;" src="{% static 'country/delegacia.jpg' %}" width="100%" height="610px">
+    </div>
+    <div style="border: 2px double #FFF; float: left; padding: 20px; width: 52%; height: 590px;" >
+      <!-- <img  style="margin: 0; float: left;" src="https://st3.depositphotos.com/3557671/12830/v/950/depositphotos_128301024-stock-illustration-museum-security-guard-icon-in.jpg" width="60px" > -->
+      <h3 style="text-align: center; color: #FFF; font-family: 'Press Start 2P';" >Chefe de polícia</h3>
+        <div style="float:left; margin-top: 2%;">
+          <img   src="{% static 'person/chefe.jpg' %}" width="60px" height="60px" >
 
-
-	<h1> Bem vindo!</h1>
-	<div style="display: inline-block;" >
-		<img  style="margin: 0; float: left;" src="{% static 'person/police.jpg' %}" width="60px" >
-		<div style="margin:0; margin-left: 100px;">
-			<p> Aaaah! Então você é o novato?! </p>
-			<p> Eu ouvir muitas historias sobre você, {{ request.user.username }}. </p>
-			<p> Vamos testar suas habilidades em campo, tenho um caso para você, mas vou logo avisando não vai ser fácil. </p>
-			<p> Sua missão é capturar Carmen Sandiego.</p>
-			<p> Ela é uma antiga espiã do Serviço de inteligência de Mônaco.</p>
-			<p> Boa sorte, {{ request.user.username }}</p>
-		</div>
+        </div>
+        <div style="margin:0; margin-left: 100px;">
+        <p> Aaaah! Então você é o novato?! </p>
+  			<p> Eu ouvir muitas historias sobre você, {{ request.user.username }}. </p>
+  			<p> Vamos testar suas habilidades em campo, tenho um caso para você, mas vou logo avisando não vai ser fácil. </p>
+  			<p> Sua missão é capturar Carmen Sandiego.</p>
+  			<p> Ela é uma antiga espiã do Serviço de inteligência de Mônaco.</p>
+  			<p> Boa sorte, {{ request.user.username }}</p>
+      </div>
+    </div>
 	</div>
-	<form action="{% url 'carmen:game' %}" method="post" >
-      {% csrf_token %}
+  <div style="border: 2px double #FFF; float: left; padding-left: 10px; width: 54.2%; height: 120px; display: inline;">
+	   <form action="{% url 'carmen:game' %}" method="post" >
+       {% csrf_token %}
         <div class="form-group">
           <input type="hidden"  name="a" value="a" />
           <button type="submit"  class="btn btn-primary btn-xl  " id="sendMessageButton">Inicializar missão</button>
         </div>
-	</form>
+	    </form>
+</div>
 </div>
 </div>
 </body>
