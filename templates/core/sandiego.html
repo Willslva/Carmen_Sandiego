@@ -42,16 +42,15 @@
 		<div style="border: 2px double #FFF; float: left; padding: 20px; width: 52%; height: 590px;" >
 			<!-- <img  style="margin: 0; float: left;" src="https://st3.depositphotos.com/3557671/12830/v/950/depositphotos_128301024-stock-illustration-museum-security-guard-icon-in.jpg" width="60px" > -->
 			<div style="margin:0; margin-left: 100px;">
-				<p>  cidade dos Estados Unidos localizada no sul do estado da Califórnia, sendo a segunda cidade mais populosa do estado e a oitava mais populosa do país.</p>
-				<p>  É tida como o berço da Califórnia e é conhecida por seu clima ameno durante a maior parte do ano, por seu porto natural de águas profundas, extensas praias, longa associação com a Marinha dos Estados Unidos e seu centro de desenvolvimento da biotecnologia. </p>
-				
-				<br>
-				<br>
+				<video width="610" height="500" autoplay>
+					<source src="{% static 'video/animacao1.webm' %}" type="video/webm">
+					<source src="{% static 'video/animacao.mp4' %}" type="video/mp4">
+					<source src="{% static 'video/animacao2.ogg' %}" type="video/ogg">
+				</video>
 			</div>
 		</div>
 		<div style="border: 2px double #FFF; float: left; padding-left: 10px; width: 54.2%; height: 120px; display: inline;">
-			<a href="{% url 'carmen:testemunhas7' %}"><button style="width: 24%; height: 120px; margin: 0 0;margin-left: 10px; " > <span> Testemunhas </span><br/> <img src="{% static 'icon/persons.png' %}" width="25%"></button></a>
-			<a href=" {% url 'carmen:mapamundi' %} "><button style="width: 24%; height: 120px; margin: 0 0;margin-left: 80px;"><span> Países </span> <br/><img  src="{% static 'icon/map.png' %}" width="25%" > </button></a>
+			<a href="{% url 'carmen:testemunhas7' %}"><button style="width: 24%; height: 120px; margin: 0 0;margin-left: 10px; " > <span> Finalizar missao </span><br/> <img src="{% static 'icon/persons.png' %}" width="25%"></button></a>
 			<a href=" {% url 'carmen:logout' %} "><button  style="width: 24%; height: 120px; margin: 0 0;margin-left: 70px;" > <span> Sair </span> <br/ > <img src="{% static 'icon/exit.png' %}" width="25%" > </button></a>
 
 		</div>

@@ -24,6 +24,7 @@ class UserCreateView(CreateView):
 class PartidaCreate(CreateView):
     model = models.Partida
     template_name = 'core/criarpartida.html'
+    success_url = reverse_lazy('carmen:game')
     fields = ['fase', 'verificador']
 
     def form_valid(self, form):
@@ -56,8 +57,13 @@ class Game(ListView):
             models.Partida.objects.filter(usuario=self.request.user.id).update(fase=5)
         elif ('f' in self.request.POST):
             models.Partida.objects.filter(usuario=self.request.user.id).update(fase=6)
+        elif ('g' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=7)
 
     def post(self, request, *args, **kwargs):
+        if ('venceu' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).delete()
+            return HttpResponseRedirect('/criarpartida/')
         if ('a' in self.request.POST):
             return self.get(request, *args, **kwargs)
         elif ('b' in self.request.POST):
@@ -69,6 +75,8 @@ class Game(ListView):
         elif ('e' in self.request.POST):
             return self.get(request, *args, **kwargs)
         elif ('f' in self.request.POST):
+            return self.get(request, *args, **kwargs)
+        elif ('g' in self.request.POST):
             return self.get(request, *args, **kwargs)
 
 

@@ -1,54 +1,49 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title> Carmen Sandiego </title>
+  <meta charset="utf-8">
+  <title> Carmen Sandiego </title>
+  <link href="https://fonts.googleapis.com/css?family=Aldrich|Allerta+Stencil|Bangers|Barrio|Black+Ops+One|Bungee+Shade|Diplomata|Faster+One|Holtwood+One+SC|Monofett|New+Rocker|Pacifico|Press+Start+2P|Righteous|Sigmar+One" rel="stylesheet">
+  <style>
 
-<!-- 	<style>
-		
-	.balao2{
-	margin-left: 20px; 
-    background: #000;
-    border-radius: 15px;
-    width: 300px;
-    height: 100px;
+    p {
+      color: #FFF;
+      font-family: 'Press Start 2P';
+      text-align: center;
 
-    position: relative;
-}
-	.balao2:after{
 
-    content: "";
+    }
 
-    width: 0;
-    height: 0;
+    #sendMessageButton {
+      font-family: 'Press Start 2P';
+    }
 
-    position: absolute;
 
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid #000;
+    span {
 
-    bottom: -20px;
-    left: 10%;
-}
+      font-family: 'Press Start 2P';
+    }
 
-	</style> -->
-<!-- <div class="balao2" >
-		<p style="color: #FFF;">óla, bom dia </p>
-	</div>
-	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE9hC1HRAolPnFO4tBlrnqhjZRXJIsexSqoHskWXe16QPD7MzQ" /> -->
+
+
+  </style>
+
+
 </head>
-<body>
+<body style="background-color: #000;">
+<div style="display: inline-block;" >
+
 
 	<h1> Bem vindo!</h1>
 	<div style="display: inline-block;" >
-		<img  style="margin: 0; float: left;" src="https://thumbs.dreamstime.com/z/pol%C3%ADcia-irritado-m%C3%A9dio-dos-desenhos-animados-94382106.jpg" width="60px" >
+		<img  style="margin: 0; float: left;" src="{% static 'person/police.jpg' %}" width="60px" >
 		<div style="margin:0; margin-left: 100px;">
 			<p> Aaaah! Então você é o novato?! </p>
 			<p> Eu ouvir muitas historias sobre você, {{ request.user.username }}. </p>
 			<p> Vamos testar suas habilidades em campo, tenho um caso para você, mas vou logo avisando não vai ser fácil. </p>
-			<p> Sua missão é capturar Carmen Sandiego</p>
-			<p> Ela é uma antiga espiã do Serviço de inteligência de Mônaco</p>
+			<p> Sua missão é capturar Carmen Sandiego.</p>
+			<p> Ela é uma antiga espiã do Serviço de inteligência de Mônaco.</p>
 			<p> Boa sorte, {{ request.user.username }}</p>
 		</div>
 	</div>
@@ -56,8 +51,10 @@
       {% csrf_token %}
         <div class="form-group">
           <input type="hidden"  name="a" value="a" />
-          <button type="submit"  class="btn btn-primary btn-xl"  >Inicializar missão</button>
+          <button type="submit"  class="btn btn-primary btn-xl  " id="sendMessageButton">Inicializar missão</button>
         </div>
 	</form>
+</div>
+</div>
 </body>
 </html>

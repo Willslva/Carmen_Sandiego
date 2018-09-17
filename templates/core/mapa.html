@@ -51,8 +51,13 @@
 						</div>
 				</form>
 
-
-			<a href="{% url 'carmen:fase7' %}"><button style=" position:absolute; z-index:1;top:59%;left:12.5%;height:30px;padding:0;margin:-15px 0 0 -30px;border:0 none;font-family: 'Press Start 2P'; color: #000; background: transparent;">San Diego <span style="font-size: 20px" >.</span></button></a>
+			<form action="{% url 'carmen:game' %}" method="post" >
+      					{% csrf_token %}
+        				<div class="form-group">
+          				<input type="hidden"  name="g" value="g" />
+			<button type="submit" style="position:absolute; z-index:1;top:59%;left:12.5%;height:30px;padding:0;margin:-15px 0 0 -30px;border:0 none;font-family: 'Press Start 2P'; color: #000; background: transparent;">San Diego <span style="font-size: 20px" >.</span></button>
+						</div>
+			</form>
 
 
 				<form action="{% url 'carmen:game' %}" method="post" >

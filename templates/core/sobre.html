@@ -11,20 +11,24 @@
 		#text {
 			overflow: hidden;
 			height: 20px;
-			animation:typing 4s steps(40, end), blink-caret .75s step-end infinite ;
+			animation:typing 8s steps(1000, end), blink-caret .75s step-end infinite ;
+			white-space: nowrap;
+		}
+		#c {
+			overflow: hidden;
+			height: 20px;
+			animation:typing 12s steps(1000, end), blink-caret .75s step-end infinite ;
+			white-space: nowrap;
+		}
+		#e {
+			overflow: hidden;
+			height: 20px;
+			animation:typing 16s steps(1000, end), blink-caret .75s step-end infinite ;
+			white-space: nowrap;
 		}
 
-		#text:nth-child(1){
-			animation:typing 4s steps(40, end), blink-caret .75s step-end infinite ;
-		}
 
-		#text:nth-child(2){
-			animation:typing 10s steps(40, end), blink-caret .75s step-end infinite ;
-		}
-
-		#text:nth-child(3){
-			animation:typing 10s steps(40, end), blink-caret .75s step-end infinite;
-		}
+	
 
 
 		@keyframes typing {
@@ -66,16 +70,14 @@
 
 
 	<div style="display: inline-block;" >
+		<h2 style="padding: 10px; color: #FFF; font-family: 'Press Start 2P'; ">Sobre</h2>
 
 		<!-- <img  style="margin: 0; float: left;" src="https://st3.depositphotos.com/3557671/12830/v/950/depositphotos_128301024-stock-illustration-museum-security-guard-icon-in.jpg" width="60px" > -->
-			<div style="margin:0; margin-left: 100px;">
-				<p id="text" >  Sobre </p>
-        <p id="text" > Jogo de computador produzido pela Brøderbund Software, lançado inicialmente em versão para Apple II, no meio da década de 1980. </p>
-        <p id="text" > No enredo o jogador é um detetive que junta pistas ao redor do mundo para solucionar um caso. </p>
-        <p id="text" > É um jogo bem educativo porque, durante essa procura, aprendende-se aspectos de geografia e as características de vários países.  </p>
-				<!-- <p id="text" >A história da cidade remonta a mais de três milênios. Como a última das quatro grandes capitais antigas da China, Pequim tem sido o centro político do país por grande parte dos últimos 800 anos.</p>
-				<p id="text" >A cidade é famosa por seus opulentos palácios, templos, parques, jardins, túmulos, muralhas, portões, e por seus tesouros artísticos e universidades, que a tornaram um centro cultural na China</p> -->
-			</div>
+		<div style="margin:0; margin-left: 100px;">
+        <p id="text" > Jogo de computador produzido pela Brøderbund Software.</p>
+        <p id="c" > O jogador é um detetive que junta pistas ao redor do mundo para solucionar um caso. </p>
+        <p id="e"> É um jogo bem educativo porque, durante essa procura, aprendende-se aspectos de geografia e as características de vários países. </p>
+		</div>
 
   </div>
 
