@@ -47,12 +47,12 @@
 
         </div>
         <div style="margin:0; margin-left: 100px;">
-        <p> Aaaah! Então você é o novato?! </p>
-  			<p> Eu ouvir muitas historias sobre você, {{ request.user.username }}. </p>
-  			<p> Vamos testar suas habilidades em campo, tenho um caso para você, mas vou logo avisando não vai ser fácil. </p>
-  			<p> Sua missão é capturar Carmen Sandiego.</p>
-  			<p> Ela é uma antiga espiã do Serviço de inteligência de Mônaco.</p>
-  			<p> Boa sorte, {{ request.user.username }}</p>
+        <p> Fim da linha Carmen Sandiego! </p>
+  			<p> Carmen Sandiego finalmente foi capturada.</p>
+  			<p> Parabéns detetive, {{ request.user.username }}</p>
+
+        <img src="{% static 'video/fim.gif' %}" >
+        
 
       </div>
     </div>
@@ -60,8 +60,8 @@
       <form action="{% url 'carmen:game' %}" method="post" >
         {% csrf_token %}
          <div class="form-group">
-           <input type="hidden"  name="a" value="a" />
-           <button type="submit" style="width: 50%; height: 120px; margin: 0 0;margin-left: 150px;"   id="sendMessageButton">Inicializar missão<img src="{% static 'icon/play.png' %}" width="25%"></button>
+           <input type="hidden"  name="venceu" value="venceu" />
+           <button type="submit" style="width: 50%; height: 120px; margin: 0 0;margin-left: 150px;"   id="sendMessageButton">Finalizar missão<img src="{% static 'icon/fim.png' %}" width="25%"></button>
          </div>
  	    </form>
 		</div>

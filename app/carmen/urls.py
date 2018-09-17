@@ -65,6 +65,8 @@ urlpatterns = [
 
      path('sobre/', core.Sobre.as_view(), name='sobre'),
 
+     path('fim/', core.Fim.as_view(), name='fim'),
+
 
 
 

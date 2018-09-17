@@ -63,7 +63,10 @@ class Game(ListView):
     def post(self, request, *args, **kwargs):
         if ('venceu' in self.request.POST):
             models.Partida.objects.filter(usuario=self.request.user.id).delete()
-            return HttpResponseRedirect('/criarpartida/')
+            return HttpResponseRedirect('/logout/')
+        if ('perdeu' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).delete()
+            return HttpResponseRedirect('/logout/')
         if ('a' in self.request.POST):
             return self.get(request, *args, **kwargs)
         elif ('b' in self.request.POST):
@@ -85,6 +88,9 @@ class Jogo(TemplateView):
 
 class Sobre(TemplateView):
     template_name = 'core/sobre.html'
+
+class Fim(TemplateView):
+    template_name = 'core/fim.html'
 
 class Intro(ListView):
     model = models.Partida
