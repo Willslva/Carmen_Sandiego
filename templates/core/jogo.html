@@ -17,6 +17,20 @@
           <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/sydney/">
           {% elif object.fase == 7 %}
           <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/sandiego/">
+          {% elif object.fase == 8 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/mexico/">
+          {% elif object.fase == 9 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/detroit/">
+          {% endif %}
+        {% endif %}
+      {% endif %}
+{% endfor %}
+
+{% for object in partida %}
+      {% if request.user.is_authenticated %}
+        {%if request.user.username == object.usuario.username%}
+          {% if object.verificador == 2 %}
+          <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/perdeu/">
           {% endif %}
         {% endif %}
       {% endif %}

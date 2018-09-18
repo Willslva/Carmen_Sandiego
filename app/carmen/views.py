@@ -46,19 +46,40 @@ class Game(ListView):
 
     def get_queryset(self):
         if ('a' in self.request.POST):
-            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=1) 
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=1)
         elif ('b' in self.request.POST):
             models.Partida.objects.filter(usuario=self.request.user.id).update(fase=2)
         elif ('c' in self.request.POST):
             models.Partida.objects.filter(usuario=self.request.user.id).update(fase=3)
+            partidaatual = models.Partida.objects.get(usuario=self.request.user.id)
+            erros = int(partidaatual.verificador)
+            erros = erros + 1
+            models.Partida.objects.filter(usuario=self.request.user.id).update(verificador=erros)
         elif ('d' in self.request.POST):
             models.Partida.objects.filter(usuario=self.request.user.id).update(fase=4)
         elif ('e' in self.request.POST):
             models.Partida.objects.filter(usuario=self.request.user.id).update(fase=5)
+            partidaatual = models.Partida.objects.get(usuario=self.request.user.id)
+            erros = int(partidaatual.verificador)
+            erros = erros + 1
+            models.Partida.objects.filter(usuario=self.request.user.id).update(verificador=erros)
         elif ('f' in self.request.POST):
             models.Partida.objects.filter(usuario=self.request.user.id).update(fase=6)
         elif ('g' in self.request.POST):
             models.Partida.objects.filter(usuario=self.request.user.id).update(fase=7)
+        elif ('j' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=8)
+            partidaatual = models.Partida.objects.get(usuario=self.request.user.id)
+            erros = int(partidaatual.verificador)
+            erros = erros + 1
+            models.Partida.objects.filter(usuario=self.request.user.id).update(verificador=erros)
+        elif ('h' in self.request.POST):
+            models.Partida.objects.filter(usuario=self.request.user.id).update(fase=9)
+            partidaatual = models.Partida.objects.get(usuario=self.request.user.id)
+            erros = int(partidaatual.verificador)
+            erros = erros + 1
+            models.Partida.objects.filter(usuario=self.request.user.id).update(verificador=erros)
+        
 
     def post(self, request, *args, **kwargs):
         if ('venceu' in self.request.POST):
@@ -81,6 +102,10 @@ class Game(ListView):
             return self.get(request, *args, **kwargs)
         elif ('g' in self.request.POST):
             return self.get(request, *args, **kwargs)
+        elif ('j' in self.request.POST):
+            return self.get(request, *args, **kwargs)
+        elif ('h' in self.request.POST):
+            return self.get(request, *args, **kwargs)
 
 
 class Jogo(TemplateView):
@@ -95,6 +120,10 @@ class Fim(TemplateView):
 class Intro(ListView):
     model = models.Partida
     template_name = 'core/introducao.html'
+
+class Perdeu(ListView):
+    model = models.Partida
+    template_name = 'core/perdeu.html'
 
 class Fase1(TemplateView):
     template_name = 'core/pequim.html'
@@ -137,6 +166,18 @@ class Fase7(TemplateView):
 
 class Testemunhas7(TemplateView):
     template_name = 'core/testemunhassandiego.html'
+
+class Fase8(TemplateView):
+    template_name = 'core/mexico.html'
+
+class Testemunhas8(TemplateView):
+    template_name = 'core/testemunhasmexico.html'
+
+class Fase9(TemplateView):
+    template_name = 'core/detroit.html'
+
+class Testemunhas9(TemplateView):
+    template_name = 'core/testemunhasdetroit.html'
 
 class Mapa (TemplateView):
     template_name = 'core/mapapequim.html'

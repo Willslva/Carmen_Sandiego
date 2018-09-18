@@ -27,6 +27,8 @@ urlpatterns = [
     #Fases do game
      path('intro/', core.Intro.as_view(), name='intro'),
 
+     path('perdeu/', core.Perdeu.as_view(), name='perdeu'),
+
      path('game/', core.Game.as_view(), name='game'),
 
      path('pequim/', core.Fase1.as_view(), name='fase1'),
@@ -56,6 +58,14 @@ urlpatterns = [
      path('sandiego/', core.Fase7.as_view(), name='fase7'),
 
      path('testemunhassandiego/', core.Testemunhas7.as_view(), name='testemunhas7'),
+
+     path('mexico/', core.Fase8.as_view(), name='fase8'),
+
+     path('testemunhasmexico/', core.Testemunhas8.as_view(), name='testemunhas8'),
+
+     path('detroit/', core.Fase9.as_view(), name='fase9'),
+
+     path('testemunhasdetroit/', core.Testemunhas9.as_view(), name='testemunhas9'),
 
      path('mapa/', core.Mapa.as_view(), name='mapa'),
 
