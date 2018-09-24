@@ -29,7 +29,7 @@ class PartidaCreate(CreateView):
 
     def form_valid(self, form):
         if (models.Partida.objects.filter(usuario=self.request.user)):
-            return HttpResponseRedirect('/game/')  
+            return HttpResponseRedirect('/game/')
         else:
             obj = form.save(commit=False)
             obj.usuario = self.request.user
@@ -79,7 +79,7 @@ class Game(ListView):
             erros = int(partidaatual.verificador)
             erros = erros + 1
             models.Partida.objects.filter(usuario=self.request.user.id).update(verificador=erros)
-        
+
 
     def post(self, request, *args, **kwargs):
         if ('venceu' in self.request.POST):
@@ -126,64 +126,64 @@ class Perdeu(ListView):
     template_name = 'core/perdeu.html'
 
 class Fase1(TemplateView):
-    template_name = 'core/pequim.html'
+    template_name = 'core/pais/pequim.html'
 
 class Testemunhas1(TemplateView):
-    template_name = 'core/testemunhaspequim.html'
+    template_name = 'core/pais/testemunhaspequim.html'
 
 class Fase2(TemplateView):
-    template_name = 'core/paris.html'
+    template_name = 'core/pais/paris.html'
 
 class Testemunhas2(TemplateView):
-    template_name = 'core/testemunhasparis.html'
+    template_name = 'core/pais/testemunhasparis.html'
 
 class Fase3(TemplateView):
-    template_name = 'core/bogota.html'
+    template_name = 'core/pais/bogota.html'
 
 class Testemunhas3(TemplateView):
-    template_name = 'core/testemunhasbogota.html'
+    template_name = 'core/testemunhas/testemunhasbogota.html'
 
 class Fase4(TemplateView):
-    template_name = 'core/buenosaires.html'
+    template_name = 'core/pais/buenosaires.html'
 
 class Testemunhas4(TemplateView):
-    template_name = 'core/testemunhasbuenosaires.html'
+    template_name = 'core/testemunhas/testemunhasbuenosaires.html'
 
 class Fase5(TemplateView):
-    template_name = 'core/atenas.html'
+    template_name = 'core/pais/atenas.html'
 
 class Testemunhas5(TemplateView):
-    template_name = 'core/testemunhasatenas.html'
+    template_name = 'core/testemunhas/testemunhasatenas.html'
 
 class Fase6(TemplateView):
-    template_name = 'core/sydney.html'
+    template_name = 'core/pais/sydney.html'
 
 class Testemunhas6(TemplateView):
-    template_name = 'core/testemunhassydney.html'
+    template_name = 'core/testemunhas/testemunhassydney.html'
 
 class Fase7(TemplateView):
-    template_name = 'core/sandiego.html'
+    template_name = 'core/pais/sandiego.html'
 
 class Testemunhas7(TemplateView):
-    template_name = 'core/testemunhassandiego.html'
+    template_name = 'core/testemunhas/testemunhassandiego.html'
 
 class Fase8(TemplateView):
-    template_name = 'core/mexico.html'
+    template_name = 'core/pais/mexico.html'
 
 class Testemunhas8(TemplateView):
-    template_name = 'core/testemunhasmexico.html'
+    template_name = 'core/testemunhas/testemunhasmexico.html'
 
 class Fase9(TemplateView):
-    template_name = 'core/detroit.html'
+    template_name = 'core/pais/detroit.html'
 
 class Testemunhas9(TemplateView):
-    template_name = 'core/testemunhasdetroit.html'
+    template_name = 'core/testemunhas/testemunhasdetroit.html'
 
 class Mapa (TemplateView):
-    template_name = 'core/mapapequim.html'
+    template_name = 'core/mapa/mapapequim.html'
 
 class MapaMundi (TemplateView):
-    template_name = 'core/mapa.html'
+    template_name = 'core/mapa/mapa.html'
 
 class Home (TemplateView):
     template_name = "core/home.html"
